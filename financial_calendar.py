@@ -8,7 +8,7 @@ import arrow
 TIMEZONE = "Europe/Paris"  # Heure locale
 OUTPUT_FILE = "financial_calendar.ics"
 DAYS_AHEAD = 7  # récupérer une semaine à l'avance
-FIXED_OFFSET_HOURS = -2  # Décalage fixe pour corriger le décalage observé
+FIXED_OFFSET_HOURS = -3  # Décalage fixe pour corriger le décalage observé
 
 # === FONCTIONS ===
 def fetch_events(start_date, end_date):
