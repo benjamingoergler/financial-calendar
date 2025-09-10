@@ -14,13 +14,6 @@ TIMEZONE = "Europe/Paris"
 paris_tz = pytz.timezone(TIMEZONE)
 
 # === FONCTIONS ===
-def get_utc_offset_hours(date):
-    """
-    Retourne le décalage UTC en heures pour Paris à une date donnée
-    (1h en hiver, 2h en été).
-    """
-    return int(paris_tz.utcoffset(date).total_seconds() / 3600)
-
 def fetch_events(start_date, end_date):
     df = investpy.economic_calendar(
         from_date=start_date.strftime("%d/%m/%Y"),
@@ -36,14 +29,14 @@ def generate_ics(df):
         e = Event()
         if row["time"] and row["time"].lower() != "all day":
             dt_str = f"{row['date']} {row['time']}"
-            dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm").datetime
-            offset = get_utc_offset_hours(dt)
-            dt = dt + timedelta(hours=offset)
+            # datetime naïf
+            dt_naive = arrow.get(dt_str, "DD/MM/YYYY HH:mm").datetime
+            # on applique le fuseau Paris
+            dt = paris_tz.localize(dt_naive)
             e.begin = dt
         else:
-            dt = arrow.get(row["date"], "DD/MM/YYYY").datetime
-            offset = get_utc_offset_hours(dt)
-            dt = dt + timedelta(hours=offset)
+            dt_naive = arrow.get(row["date"], "DD/MM/YYYY").datetime
+            dt = paris_tz.localize(dt_naive)
             e.begin = dt
 
         e.name = f"{row['currency']} - {row['event']}"
