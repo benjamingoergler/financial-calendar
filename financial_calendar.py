@@ -7,7 +7,7 @@ import arrow
 # === CONFIGURATION ===
 OUTPUT_FILE = "financial_calendar.ics"
 DAYS_AHEAD = 7
-FIXED_OFFSET_HOURS = 2  # +2 heures pour corriger le décalage
+FIXED_OFFSET_HOURS = 2  # Décalage UTC pour que Google Calendar affiche correctement
 
 # === FONCTIONS ===
 def fetch_events(start_date, end_date):
@@ -25,12 +25,14 @@ def generate_ics(df):
         e = Event()
         if row["time"] and row["time"].lower() != "all day":
             dt_str = f"{row['date']} {row['time']}"
-            dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm").shift(hours=FIXED_OFFSET_HOURS)
+            dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm")
+            # Appliquer le décalage UTC pour Google Calendar
+            dt = dt.shift(hours=FIXED_OFFSET_HOURS)
+            e.begin = dt
         else:
             dt = arrow.get(row["date"], "DD/MM/YYYY").shift(hours=FIXED_OFFSET_HOURS)
-        
-        # Mettre en UTC pour Google Calendar
-        e.begin = dt.to("UTC")
+            e.begin = dt
+
         e.name = f"{row['currency']} - {row['event']}"
         e.description = f"Forecast: {row['forecast']}, Previous: {row['previous']}, Actual: {row['actual']}"
         cal.events.add(e)
