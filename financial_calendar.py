@@ -35,10 +35,17 @@ def generate_ics(df):
         if row["time"] and row["time"].lower() != "all day":
             dt_str = f"{row['date']} {row['time']}"
             dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm").datetime
+
+            # s'assurer que le datetime est naïf
+            if dt.tzinfo is not None:
+                dt = dt.replace(tzinfo=None)
+
             dt = tz.localize(dt)  # applique le fuseau horaire Europe/Paris
             e.begin = dt
         else:
             dt = arrow.get(row["date"], "DD/MM/YYYY").datetime
+            if dt.tzinfo is not None:
+                dt = dt.replace(tzinfo=None)
             dt = tz.localize(dt)
             e.begin = dt
 
