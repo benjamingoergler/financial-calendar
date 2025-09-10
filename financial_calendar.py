@@ -3,11 +3,12 @@ import pandas as pd
 from ics import Calendar, Event
 from datetime import datetime, timedelta
 import arrow
+import pytz
 
 # === CONFIGURATION ===
 OUTPUT_FILE = "financial_calendar.ics"
 DAYS_AHEAD = 7
-TIME_OFFSET_HOURS = -3  # retranchement pour que ça colle à Paris
+TIMEZONE = "Europe/Paris"  # fuseau horaire fixe
 
 # === FONCTIONS ===
 def fetch_events(start_date, end_date):
@@ -19,6 +20,7 @@ def fetch_events(start_date, end_date):
     return df
 
 def generate_ics(df):
+    tz = pytz.timezone(TIMEZONE)
     cal = Calendar()
 
     for _, row in df.iterrows():
@@ -26,21 +28,46 @@ def generate_ics(df):
         if row["time"] and row["time"].lower() != "all day":
             dt_str = f"{row['date']} {row['time']}"
             dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm").datetime
-            # on applique le retranchement fixe pour avoir l'heure Paris correcte
-            dt = dt + timedelta(hours=TIME_OFFSET_HOURS)
+            dt = dt.replace(tzinfo=None)  # s'assure que datetime est naïf
+            dt = tz.localize(dt)
             e.begin = dt
         else:
             dt = arrow.get(row["date"], "DD/MM/YYYY").datetime
-            dt = dt + timedelta(hours=TIME_OFFSET_HOURS)
+            dt = dt.replace(tzinfo=None)
+            dt = tz.localize(dt)
             e.begin = dt
 
         e.name = f"{row['currency']} - {row['event']}"
         e.description = f"Forecast: {row['forecast']}, Previous: {row['previous']}, Actual: {row['actual']}"
         cal.events.add(e)
 
+    # Section VTIMEZONE complète
+    vtimezone = f"""BEGIN:VTIMEZONE
+TZID:{TIMEZONE}
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19700101T000000
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+END:DAYLIGHT
+END:VTIMEZONE
+"""
+
+    # Écriture manuelle dans le fichier ICS pour éviter l'erreur clone
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.writelines(cal)
-    print(f"✅ ICS généré : {OUTPUT_FILE}")
+        f.write("BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:ics.py - http://git.io/lLljaA\n")
+        f.write(vtimezone + "\n")
+        for event in cal.events:
+            f.write(event.serialize() + "\n")
+        f.write("END:VCALENDAR\n")
+
+    print(f"✅ ICS généré avec fuseau complet : {OUTPUT_FILE}")
 
 # === EXECUTION ===
 if __name__ == "__main__":
