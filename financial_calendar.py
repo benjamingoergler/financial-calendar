@@ -3,15 +3,11 @@ import pandas as pd
 from ics import Calendar, Event
 from datetime import datetime, timedelta
 import arrow
-import pytz
 
 # === CONFIGURATION ===
 OUTPUT_FILE = "financial_calendar.ics"
 DAYS_AHEAD = 7
-TIMEZONE = "Europe/Paris"
-
-# Fuseau horaire Paris
-paris_tz = pytz.timezone(TIMEZONE)
+FIXED_OFFSET_HOURS = 2  # +2h pour Paris (heure d'été/hiver incluse)
 
 # === FONCTIONS ===
 def fetch_events(start_date, end_date):
@@ -29,14 +25,12 @@ def generate_ics(df):
         e = Event()
         if row["time"] and row["time"].lower() != "all day":
             dt_str = f"{row['date']} {row['time']}"
-            # datetime naïf
-            dt_naive = arrow.get(dt_str, "DD/MM/YYYY HH:mm").datetime
-            # on applique le fuseau Paris
-            dt = paris_tz.localize(dt_naive)
+            dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm")
+            # Appliquer décalage fixe pour Paris
+            dt = dt.shift(hours=FIXED_OFFSET_HOURS)
             e.begin = dt
         else:
-            dt_naive = arrow.get(row["date"], "DD/MM/YYYY").datetime
-            dt = paris_tz.localize(dt_naive)
+            dt = arrow.get(row["date"], "DD/MM/YYYY").shift(hours=FIXED_OFFSET_HOURS)
             e.begin = dt
 
         e.name = f"{row['currency']} - {row['event']}"
