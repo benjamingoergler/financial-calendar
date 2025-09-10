@@ -3,14 +3,13 @@ import pandas as pd
 from ics import Calendar, Event
 from datetime import datetime, timedelta
 import arrow
-import pytz
 import os
 
 # === CONFIGURATION ===
 OUTPUT_DIR = "output"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "financial_calendar.ics")
 DAYS_AHEAD = 7
-TIMEZONE = "Europe/Paris"  # fuseau horaire pour tous les événements
+HOUR_OFFSET = 2  # simple décalage fixe de +2h
 
 # Crée le dossier output si inexistant
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -27,26 +26,19 @@ def fetch_events(start_date, end_date):
 
 def generate_ics(df):
     cal = Calendar()
-    tz = pytz.timezone(TIMEZONE)
 
     for _, row in df.iterrows():
         e = Event()
-        # Gestion de l'heure
+
+        # Gestion de l'heure avec simple décalage
         if row["time"] and row["time"].lower() != "all day":
             dt_str = f"{row['date']} {row['time']}"
             dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm").datetime
-
-            # s'assurer que le datetime est naïf
-            if dt.tzinfo is not None:
-                dt = dt.replace(tzinfo=None)
-
-            dt = tz.localize(dt)  # applique le fuseau horaire Europe/Paris
+            dt = dt + timedelta(hours=HOUR_OFFSET)  # ajoute 2h
             e.begin = dt
         else:
             dt = arrow.get(row["date"], "DD/MM/YYYY").datetime
-            if dt.tzinfo is not None:
-                dt = dt.replace(tzinfo=None)
-            dt = tz.localize(dt)
+            dt = dt + timedelta(hours=HOUR_OFFSET)
             e.begin = dt
 
         # Titre et description
