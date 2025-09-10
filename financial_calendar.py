@@ -1,5 +1,4 @@
 import investpy
-import pandas as pd
 from ics import Calendar, Event
 from datetime import datetime, timedelta
 import arrow
@@ -7,7 +6,7 @@ import arrow
 # === CONFIGURATION ===
 OUTPUT_FILE = "financial_calendar.ics"
 DAYS_AHEAD = 7
-FIXED_OFFSET_HOURS = 2  # Décalage UTC pour que Google Calendar affiche correctement
+UTC_SHIFT_HOURS = 2  # Décalage pour Google Calendar GMT+0
 
 # === FONCTIONS ===
 def fetch_events(start_date, end_date):
@@ -25,12 +24,10 @@ def generate_ics(df):
         e = Event()
         if row["time"] and row["time"].lower() != "all day":
             dt_str = f"{row['date']} {row['time']}"
-            dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm")
-            # Appliquer le décalage UTC pour Google Calendar
-            dt = dt.shift(hours=FIXED_OFFSET_HOURS)
+            dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm").shift(hours=UTC_SHIFT_HOURS)
             e.begin = dt
         else:
-            dt = arrow.get(row["date"], "DD/MM/YYYY").shift(hours=FIXED_OFFSET_HOURS)
+            dt = arrow.get(row["date"], "DD/MM/YYYY").shift(hours=UTC_SHIFT_HOURS)
             e.begin = dt
 
         e.name = f"{row['currency']} - {row['event']}"
