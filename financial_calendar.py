@@ -3,12 +3,15 @@ import pandas as pd
 from ics import Calendar, Event
 from datetime import datetime, timedelta
 import arrow
+import pytz
 
 # === CONFIGURATION ===
 TIMEZONE = "Europe/Paris"  # Heure locale
 OUTPUT_FILE = "financial_calendar.ics"
-DAYS_AHEAD = 7  # récupérer une semaine à l'avance
-FIXED_OFFSET_HOURS = -3  # Décalage fixe pour corriger le décalage observé
+DAYS_AHEAD = 7              # récupérer une semaine à l'avance
+
+# Définir le fuseau horaire Paris
+paris_tz = pytz.timezone(TIMEZONE)
 
 # === FONCTIONS ===
 def fetch_events(start_date, end_date):
@@ -24,8 +27,7 @@ def fetch_events(start_date, end_date):
 
 def generate_ics(df):
     """
-    Crée un fichier ICS à partir des événements filtrés avec timezone correcte
-    et applique un décalage fixe pour Paris.
+    Crée un fichier ICS à partir des événements filtrés avec timezone correcte.
     """
     cal = Calendar()
 
@@ -33,13 +35,11 @@ def generate_ics(df):
         e = Event()
         if row["time"] and row["time"].lower() != "all day":
             dt_str = f"{row['date']} {row['time']}"
-            # Arrow pour gérer la date et l'heure
-            dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm")
-            # Appliquer le décalage fixe
-            dt = dt.shift(hours=FIXED_OFFSET_HOURS)
+            # Arrow avec fuseau Paris
+            dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm").replace(tzinfo=paris_tz)
             e.begin = dt
         else:
-            dt = arrow.get(row["date"], "DD/MM/YYYY").shift(hours=FIXED_OFFSET_HOURS)
+            dt = arrow.get(row["date"], "DD/MM/YYYY").replace(tzinfo=paris_tz)
             e.begin = dt
 
         # Nom de l'événement avec le pays
