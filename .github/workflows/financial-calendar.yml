@@ -28,6 +28,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./
+          publish_branch: gh-pages       # branche où Pages publie
+          publish_dir: ./output          # dossier output contenant le ICS
           keep_files: true

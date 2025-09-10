@@ -6,7 +6,7 @@ import arrow
 import pytz
 
 # === CONFIGURATION ===
-OUTPUT_FILE = "financial_calendar.ics"
+OUTPUT_FILE = "output/financial_calendar.ics"
 DAYS_AHEAD = 7
 TIMEZONE = "Europe/Paris"  # fuseau horaire fixe
 
