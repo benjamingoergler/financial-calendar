@@ -1,12 +1,10 @@
 import investpy
 from ics import Calendar, Event
 from datetime import datetime, timedelta
-import arrow
 
-# === CONFIGURATION ===
-OUTPUT_FILE = "financial_calendar.ics"
+# === CONFIG ===
+OUTPUT_FILE = "financial_calendar.ics"  # même nom qu'avant
 DAYS_AHEAD = 7
-UTC_SHIFT_HOURS = 2  # Décalage pour Google Calendar GMT+0
 
 # === FONCTIONS ===
 def fetch_events(start_date, end_date):
@@ -17,26 +15,24 @@ def fetch_events(start_date, end_date):
     df = df[df["importance"].str.lower() == "high"]
     return df
 
-def generate_ics(df):
+def generate_raw_ics(df):
     cal = Calendar()
-
     for _, row in df.iterrows():
         e = Event()
+        # On prend directement la date/heure telle quelle, sans conversion
         if row["time"] and row["time"].lower() != "all day":
             dt_str = f"{row['date']} {row['time']}"
-            dt = arrow.get(dt_str, "DD/MM/YYYY HH:mm").shift(hours=UTC_SHIFT_HOURS)
-            e.begin = dt
+            dt = datetime.strptime(dt_str, "%d/%m/%Y %H:%M")
         else:
-            dt = arrow.get(row["date"], "DD/MM/YYYY").shift(hours=UTC_SHIFT_HOURS)
-            e.begin = dt
-
+            dt = datetime.strptime(row['date'], "%d/%m/%Y")
+        e.begin = dt
         e.name = f"{row['currency']} - {row['event']}"
         e.description = f"Forecast: {row['forecast']}, Previous: {row['previous']}, Actual: {row['actual']}"
         cal.events.add(e)
-
+    
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.writelines(cal)
-    print(f"✅ ICS généré : {OUTPUT_FILE}")
+    print(f"✅ ICS brut généré : {OUTPUT_FILE}")
 
 # === EXECUTION ===
 if __name__ == "__main__":
@@ -47,4 +43,4 @@ if __name__ == "__main__":
     if df_events.empty:
         print("⚠ Aucun événement 3 étoiles trouvé.")
     else:
-        generate_ics(df_events)
+        generate_raw_ics(df_events)
