@@ -6,7 +6,7 @@ import os
 OUTPUT_DIR = "output"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "financial_calendar.ics")
 DAYS_AHEAD = 14
-TIME_SHIFT_HOURS = 2  # Tu peux ajuster si tu veux un décalage custom
+TIME_SHIFT_HOURS = 0  # Ajustable si tu veux un décalage custom
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -36,13 +36,13 @@ def generate_ics(df):
         else:
             dt = datetime.strptime(row["date"], "%d/%m/%Y")
 
-        # ✅ On force le fuseau Europe/Paris
+        # ✅ Forcer le fuseau Europe/Paris
         dt = dt.replace(tzinfo=ZoneInfo("Europe/Paris"))
 
-        # ✅ Conversion en UTC
+        # ✅ Conversion stable en UTC
         dt_utc = dt.astimezone(ZoneInfo("UTC"))
 
-        # --- Application éventuelle du décalage custom
+        # --- Décalage custom éventuel
         dt_shifted = dt_utc + timedelta(hours=TIME_SHIFT_HOURS)
 
         # Format ICS en UTC
@@ -68,12 +68,13 @@ def generate_ics(df):
 
 # --- Main ---
 if __name__ == "__main__":
-    today = datetime.today()
+    # ✅ On force la date locale Paris pour la requête, même sur GitHub
+    today = datetime.now(tz=ZoneInfo("Europe/Paris"))
     next_week = today + timedelta(days=DAYS_AHEAD)
+
     df_events = fetch_events(today, next_week)
 
     if df_events.empty:
         print("⚠ Aucun événement trouvé.")
     else:
         generate_ics(df_events)
-
