@@ -6,7 +6,7 @@ import os
 OUTPUT_DIR = "output"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "financial_calendar.ics")
 DAYS_AHEAD = 14
-TIME_SHIFT_HOURS = 0  # Ajustable si tu veux un décalage custom
+TIME_SHIFT_HOURS = 1  # Ajustable si tu veux un décalage custom
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -78,3 +78,4 @@ if __name__ == "__main__":
         print("⚠ Aucun événement trouvé.")
     else:
         generate_ics(df_events)
+
