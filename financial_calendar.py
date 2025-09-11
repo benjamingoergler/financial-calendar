@@ -1,11 +1,12 @@
 import investpy
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo  # Python 3.9+
 import os
 
 OUTPUT_DIR = "output"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "financial_calendar.ics")
 DAYS_AHEAD = 14
-TIME_SHIFT_HOURS = 0  # <-- soustraction de 3 heures
+TIME_SHIFT_HOURS = 0  # Tu peux ajuster si tu veux un décalage custom
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -15,11 +16,11 @@ def fetch_events(start_date, end_date):
         from_date=start_date.strftime("%d/%m/%Y"),
         to_date=end_date.strftime("%d/%m/%Y")
     )
-    # filtrer uniquement les événements à haute importance
+    # Filtrer uniquement les événements à haute importance
     df = df[df["importance"].str.lower() == "high"]
     return df
 
-# --- Génération du fichier ICS (donnée brute) ---
+# --- Génération du fichier ICS (stable) ---
 def generate_ics(df):
     lines = []
     lines.append("BEGIN:VCALENDAR")
@@ -35,13 +36,20 @@ def generate_ics(df):
         else:
             dt = datetime.strptime(row["date"], "%d/%m/%Y")
 
-        # --- Application du décalage de 3 heures ---
-        dt_shifted = dt + timedelta(hours=TIME_SHIFT_HOURS)
+        # ✅ On force le fuseau Europe/Paris
+        dt = dt.replace(tzinfo=ZoneInfo("Europe/Paris"))
 
+        # ✅ Conversion en UTC
+        dt_utc = dt.astimezone(ZoneInfo("UTC"))
+
+        # --- Application éventuelle du décalage custom
+        dt_shifted = dt_utc + timedelta(hours=TIME_SHIFT_HOURS)
+
+        # Format ICS en UTC
         dt_ics = dt_shifted.strftime("%Y%m%dT%H%M%SZ")
         lines.append(f"DTSTART:{dt_ics}")
 
-        # Résumé et description avec les mêmes noms que la DataFrame
+        # Résumé et description
         summary = f"{row['currency']} - {row['event']}"
         lines.append(f"SUMMARY:{summary}")
 
@@ -68,8 +76,3 @@ if __name__ == "__main__":
         print("⚠ Aucun événement trouvé.")
     else:
         generate_ics(df_events)
-
-
-
-
-
