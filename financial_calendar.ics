@@ -5,180 +5,180 @@ BEGIN:VEVENT
 DTSTART:20250911T131500Z
 SUMMARY:EUR - Deposit Facility Rate  (Sep)
 DESCRIPTION:Forecast: 2.00%, Previous: 2.00%, Actual: None
-UID:b45d11655600cbc7@fin.org
+UID:2745c59b248e48d0@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250911T131500Z
 SUMMARY:EUR - ECB Interest Rate Decision  (Sep)
 DESCRIPTION:Forecast: 2.15%, Previous: 2.15%, Actual: None
-UID:262f54dab46a13f8@fin.org
+UID:89004b93727d56ab@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250911T133000Z
 SUMMARY:USD - Core CPI (MoM)  (Aug)
 DESCRIPTION:Forecast: 0.3%, Previous: 0.3%, Actual: None
-UID:7c0019b2babb1899@fin.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20250911T133000Z
-SUMMARY:USD - CPI (MoM)  (Aug)
-DESCRIPTION:Forecast: 0.3%, Previous: 0.2%, Actual: None
-UID:51c3104f205d7283@fin.org
+UID:952ade522b912374@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250911T133000Z
 SUMMARY:USD - CPI (YoY)  (Aug)
 DESCRIPTION:Forecast: 2.9%, Previous: 2.7%, Actual: None
-UID:c48bd94be91aa3fc@fin.org
+UID:2f495e9fa403ff20@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250911T133000Z
+SUMMARY:USD - CPI (MoM)  (Aug)
+DESCRIPTION:Forecast: 0.3%, Previous: 0.2%, Actual: None
+UID:537a2b346a95fbbb@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250911T133000Z
 SUMMARY:USD - Initial Jobless Claims
 DESCRIPTION:Forecast: 235K, Previous: 237K, Actual: None
-UID:5d2ee85023d4e6b8@fin.org
+UID:87044da163277519@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250911T134500Z
 SUMMARY:EUR - ECB Press Conference
 DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:8b3f7d1a365416d7@fin.org
+UID:1328e8dd42c9f584@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250911T180000Z
 SUMMARY:USD - 30-Year Bond Auction
 DESCRIPTION:Forecast: None, Previous: 4.813%, Actual: None
-UID:f59ce4883b4e2a64@fin.org
+UID:bf560ef023f4bbad@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250912T070000Z
 SUMMARY:GBP - GDP (MoM)  (Jul)
 DESCRIPTION:Forecast: 0.0%, Previous: 0.4%, Actual: None
-UID:499d94ab0e8b4cec@fin.org
+UID:4d2d7071a955ba05@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250912T070000Z
 SUMMARY:EUR - German CPI (MoM)  (Aug)
 DESCRIPTION:Forecast: 0.1%, Previous: 0.1%, Actual: None
-UID:01bf03afc0fa9369@fin.org
+UID:d66896bedb6a4204@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250916T133000Z
 SUMMARY:USD - Core Retail Sales (MoM)  (Aug)
 DESCRIPTION:Forecast: None, Previous: 0.3%, Actual: None
-UID:b8b77176332f3c58@fin.org
+UID:86212d1f6e95888b@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250916T133000Z
 SUMMARY:USD - Retail Sales (MoM)  (Aug)
 DESCRIPTION:Forecast: None, Previous: 0.5%, Actual: None
-UID:7ba5ee577c289b4a@fin.org
+UID:5930eaeced5bba65@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T070000Z
 SUMMARY:GBP - CPI (YoY)  (Aug)
 DESCRIPTION:Forecast: None, Previous: 3.8%, Actual: None
-UID:b2790eae68fb2f10@fin.org
+UID:43d6725a4006277a@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T100000Z
 SUMMARY:EUR - CPI (YoY)  (Aug)
 DESCRIPTION:Forecast: 2.1%, Previous: 2.0%, Actual: None
-UID:7b1e41b4a4bec26a@fin.org
+UID:572180796b405c93@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T144500Z
 SUMMARY:CAD - BoC Interest Rate Decision
 DESCRIPTION:Forecast: None, Previous: 2.75%, Actual: None
-UID:36bc86417da46f14@fin.org
+UID:dc5cf6a8bb6612d0@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T190000Z
 SUMMARY:USD - FOMC Economic Projections
 DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:1afab18e49678096@fin.org
+UID:979d0b90c3177349@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T190000Z
 SUMMARY:USD - FOMC Statement
 DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:b01f7192ab069807@fin.org
+UID:980371a1ebdfe493@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T190000Z
 SUMMARY:USD - Fed Interest Rate Decision
 DESCRIPTION:Forecast: 4.25%, Previous: 4.50%, Actual: None
-UID:89141bdc6eba569f@fin.org
+UID:97895d65f7f3e5c9@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T193000Z
 SUMMARY:USD - FOMC Press Conference
 DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:b93ba5cea4dc5cfa@fin.org
+UID:d9695f6d45c329b4@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250918T120000Z
 SUMMARY:GBP - BoE Interest Rate Decision  (Sep)
 DESCRIPTION:Forecast: None, Previous: 4.00%, Actual: None
-UID:b46fc1a4dc47e02e@fin.org
+UID:ca6a9ec026e62cee@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250918T133000Z
 SUMMARY:USD - Initial Jobless Claims
 DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:382f19f402c2e4a3@fin.org
+UID:f0249a178a03809e@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250918T133000Z
 SUMMARY:USD - Philadelphia Fed Manufacturing Index  (Sep)
 DESCRIPTION:Forecast: None, Previous: -0.3, Actual: None
-UID:235dec25a99f3e2a@fin.org
+UID:1f4600c60737c04f@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250919T040000Z
 SUMMARY:JPY - BoJ Interest Rate Decision
 DESCRIPTION:Forecast: None, Previous: 0.50%, Actual: None
-UID:e386b0d1c5d1635c@fin.org
+UID:804d1161d23b8a4e@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250923T144500Z
 SUMMARY:USD - S&P Global Manufacturing PMI  (Sep)
 DESCRIPTION:Forecast: None, Previous: 53.0, Actual: None
-UID:29c6fc9c919ac689@fin.org
+UID:b2a8d80008750a7a@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250923T144500Z
 SUMMARY:USD - S&P Global Services PMI  (Sep)
 DESCRIPTION:Forecast: None, Previous: 54.5, Actual: None
-UID:f90039fbcd93ae20@fin.org
+UID:45c2872b86c646b3@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250923T150000Z
 SUMMARY:USD - Existing Home Sales  (Aug)
 DESCRIPTION:Forecast: None, Previous: 4.01M, Actual: None
-UID:e748ec3a89395f11@fin.org
+UID:61e065bceab40490@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250924T150000Z
 SUMMARY:USD - New Home Sales  (Aug)
 DESCRIPTION:Forecast: None, Previous: 652K, Actual: None
-UID:562340907583a9de@fin.org
+UID:515d266d550c61f1@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250925T083000Z
 SUMMARY:CHF - SNB Interest Rate Decision  (Q3)
 DESCRIPTION:Forecast: None, Previous: 0.00%, Actual: None
-UID:67b511987b7619f3@fin.org
+UID:7c4ab75900d45430@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250925T133000Z
 SUMMARY:USD - Durable Goods Orders (MoM)  (Aug)
 DESCRIPTION:Forecast: None, Previous: -2.8%, Actual: None
-UID:695b17ae608596d9@fin.org
+UID:0e1cf4b47c22f71e@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250925T133000Z
 SUMMARY:USD - GDP (QoQ)  (Q2)
 DESCRIPTION:Forecast: None, Previous: 3.3%, Actual: None
-UID:e09315d3c577a714@fin.org
+UID:9388c8b847e7f5b5@fin.org
 END:VEVENT
 END:VCALENDAR
