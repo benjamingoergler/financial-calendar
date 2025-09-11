@@ -2,7 +2,8 @@ name: Generate Financial Calendar
 
 on:
   schedule:
-    - cron: "0 7 * * *"   # Tous les jours à 07:00 UTC (09:00 Paris)
+    - cron: "0 8 * * *"   # Tous les jours à 08:00 UTC (10:00 Paris)
+    - cron: "0 9 * * *"   # Tous les jours à 09:00 UTC (11:00 Paris)
   workflow_dispatch:       # Permet de lancer manuellement
 
 jobs:
@@ -24,10 +25,24 @@ jobs:
       - name: Run script
         run: python financial_calendar.py
 
+      - name: Check if calendar changed
+        id: check_diff
+        run: |
+          git fetch origin gh-pages
+          mkdir -p old_output
+          git show origin/gh-pages:financial_calendar.ics > old_output/financial_calendar.ics || true
+          
+          if cmp -s "output/financial_calendar.ics" "old_output/financial_calendar.ics"; then
+            echo "no_change=true" >> $GITHUB_ENV
+          else
+            echo "no_change=false" >> $GITHUB_ENV
+          fi
+
       - name: Deploy to GitHub Pages
+        if: env.no_change == 'false'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages       # branche où Pages publie
-          publish_dir: ./output          # dossier output contenant le ICS
+          publish_branch: gh-pages
+          publish_dir: ./output
           keep_files: true
