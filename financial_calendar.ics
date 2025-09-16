@@ -5,144 +5,186 @@ BEGIN:VEVENT
 DTSTART:20250916T123000Z
 SUMMARY:USD - Core Retail Sales (MoM)  (Aug)
 DESCRIPTION:Forecast: 0.4%, Previous: 0.3%, Actual: None
-UID:935fbd52c4b9dd1f@fin.org
+UID:0e44ed7513588cf2@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250916T123000Z
 SUMMARY:USD - Retail Sales (MoM)  (Aug)
 DESCRIPTION:Forecast: 0.2%, Previous: 0.5%, Actual: None
-UID:de15a5c6ce53bcc6@fin.org
+UID:db73418d0944f8d9@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T060000Z
 SUMMARY:GBP - CPI (YoY)  (Aug)
 DESCRIPTION:Forecast: 3.8%, Previous: 3.8%, Actual: None
-UID:5d9c3ba847271955@fin.org
+UID:7c5e368f1311da84@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T090000Z
 SUMMARY:EUR - CPI (YoY)  (Aug)
 DESCRIPTION:Forecast: 2.1%, Previous: 2.1%, Actual: None
-UID:a3ff6081eded715f@fin.org
+UID:8111128e9f6975ba@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T134500Z
 SUMMARY:CAD - BoC Interest Rate Decision
 DESCRIPTION:Forecast: 2.50%, Previous: 2.75%, Actual: None
-UID:719695c76634431d@fin.org
+UID:ed1504e5eb99bda8@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T143000Z
 SUMMARY:USD - Crude Oil Inventories
 DESCRIPTION:Forecast: None, Previous: 3.939M, Actual: None
-UID:3168ccedaaf8a4ca@fin.org
+UID:d5bd6944c5d590df@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T180000Z
 SUMMARY:USD - FOMC Economic Projections
 DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:304a6a76cd5585fe@fin.org
+UID:ef9e30d35c116023@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T180000Z
 SUMMARY:USD - FOMC Statement
 DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:7cc94c28fb75e731@fin.org
+UID:2a75e99e0055ad40@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T180000Z
 SUMMARY:USD - Fed Interest Rate Decision
 DESCRIPTION:Forecast: 4.25%, Previous: 4.50%, Actual: None
-UID:b1c3cf65a7781727@fin.org
+UID:9cfbd39069a05b66@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250917T183000Z
 SUMMARY:USD - FOMC Press Conference
 DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:fa55569cef3ed465@fin.org
+UID:4244567356d364ba@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250918T110000Z
 SUMMARY:GBP - BoE Interest Rate Decision  (Sep)
 DESCRIPTION:Forecast: 4.00%, Previous: 4.00%, Actual: None
-UID:e8097c9460c8843a@fin.org
+UID:eb566d3b736feffe@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250918T123000Z
 SUMMARY:USD - Initial Jobless Claims
 DESCRIPTION:Forecast: 245K, Previous: 263K, Actual: None
-UID:fdc8a0cb099911da@fin.org
+UID:d33b8fd46c103188@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250918T123000Z
 SUMMARY:USD - Philadelphia Fed Manufacturing Index  (Sep)
 DESCRIPTION:Forecast: 1.4, Previous: -0.3, Actual: None
-UID:daabdc4f187b96bb@fin.org
+UID:5a847285e69f676a@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250919T030000Z
 SUMMARY:JPY - BoJ Interest Rate Decision
 DESCRIPTION:Forecast: 0.50%, Previous: 0.50%, Actual: None
-UID:d6fe57e5f7bb8b90@fin.org
+UID:1dac650b838c23fd@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250923T134500Z
 SUMMARY:USD - S&P Global Manufacturing PMI  (Sep)
 DESCRIPTION:Forecast: None, Previous: 53.0, Actual: None
-UID:b7047203b062a814@fin.org
+UID:f49d9a0d90c8ebe5@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250923T134500Z
 SUMMARY:USD - S&P Global Services PMI  (Sep)
 DESCRIPTION:Forecast: None, Previous: 54.5, Actual: None
-UID:e092071cdf50e418@fin.org
+UID:b76b371cc583b640@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250923T140000Z
 SUMMARY:USD - Existing Home Sales  (Aug)
 DESCRIPTION:Forecast: None, Previous: 4.01M, Actual: None
-UID:3278a8240e39c343@fin.org
+UID:888795424c0c376e@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250924T140000Z
 SUMMARY:USD - New Home Sales  (Aug)
 DESCRIPTION:Forecast: None, Previous: 652K, Actual: None
-UID:f3d105d73d9b7486@fin.org
+UID:04e391716df9c285@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250925T073000Z
 SUMMARY:CHF - SNB Interest Rate Decision  (Q3)
 DESCRIPTION:Forecast: None, Previous: 0.00%, Actual: None
-UID:c27cefd7a3355422@fin.org
+UID:fbf91b40d7ec9f35@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250925T123000Z
 SUMMARY:USD - Durable Goods Orders (MoM)  (Aug)
 DESCRIPTION:Forecast: None, Previous: -2.8%, Actual: None
-UID:1017aaf6c484c361@fin.org
+UID:09e164a416291389@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250925T123000Z
 SUMMARY:USD - GDP (QoQ)  (Q2)
 DESCRIPTION:Forecast: None, Previous: 3.3%, Actual: None
-UID:09abc7e1d8907ab6@fin.org
+UID:e497583736f1adf4@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250925T123000Z
 SUMMARY:USD - Initial Jobless Claims
 DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:58a03695ec60f6b5@fin.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20250926T123000Z
-SUMMARY:USD - Core PCE Price Index (YoY)  (Aug)
-DESCRIPTION:Forecast: None, Previous: 2.9%, Actual: None
-UID:df246e408b8c8890@fin.org
+UID:8a78ebaa517a8cbe@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250926T123000Z
 SUMMARY:USD - Core PCE Price Index (MoM)  (Aug)
 DESCRIPTION:Forecast: None, Previous: 0.3%, Actual: None
-UID:d0318df225c896d4@fin.org
+UID:e37d9d16de78f33e@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250926T123000Z
+SUMMARY:USD - Core PCE Price Index (YoY)  (Aug)
+DESCRIPTION:Forecast: None, Previous: 2.9%, Actual: None
+UID:0f5367531d689994@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250930T013000Z
+SUMMARY:CNY - Manufacturing PMI  (Sep)
+DESCRIPTION:Forecast: None, Previous: 49.4, Actual: None
+UID:5441a483e34157e9@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250930T043000Z
+SUMMARY:AUD - RBA Interest Rate Decision  (Sep)
+DESCRIPTION:Forecast: None, Previous: 3.60%, Actual: None
+UID:5b93ee23090ebfd1@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250930T060000Z
+SUMMARY:GBP - GDP (QoQ)  (Q2)
+DESCRIPTION:Forecast: None, Previous: 0.3%, Actual: None
+UID:62dcbe69867a0fdd@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250930T060000Z
+SUMMARY:GBP - GDP (YoY)  (Q2)
+DESCRIPTION:Forecast: None, Previous: 1.2%, Actual: None
+UID:24ad82882edaa4d9@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250930T134500Z
+SUMMARY:USD - Chicago PMI  (Sep)
+DESCRIPTION:Forecast: None, Previous: 41.5, Actual: None
+UID:74255a2484b9acee@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250930T140000Z
+SUMMARY:USD - CB Consumer Confidence  (Sep)
+DESCRIPTION:Forecast: None, Previous: 97.4, Actual: None
+UID:37447b2315cef577@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250930T140000Z
+SUMMARY:USD - JOLTS Job Openings  (Aug)
+DESCRIPTION:Forecast: None, Previous: 7.181M, Actual: None
+UID:f4b4c3f8d9f3c49f@fin.org
 END:VEVENT
 END:VCALENDAR
