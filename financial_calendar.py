@@ -2,6 +2,7 @@ import investpy
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo  # Python 3.9+
 import os
+import hashlib
 
 OUTPUT_DIR = "output"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "financial_calendar.ics")
@@ -56,7 +57,11 @@ def generate_ics(df):
         desc = f"Forecast: {row['forecast']}, Previous: {row['previous']}, Actual: {row['actual']}"
         lines.append(f"DESCRIPTION:{desc}")
 
-        lines.append(f"UID:{os.urandom(8).hex()}@fin.org")
+        # ✅ UID stable basé sur les données de l'événement
+        uid_seed = f"{row['date']}_{row['time']}_{row['currency']}_{row['event']}"
+        uid_hash = hashlib.md5(uid_seed.encode()).hexdigest()
+        lines.append(f"UID:{uid_hash}@fin.org")
+
         lines.append("END:VEVENT")
 
     lines.append("END:VCALENDAR")
@@ -78,4 +83,3 @@ if __name__ == "__main__":
         print("⚠ Aucun événement trouvé.")
     else:
         generate_ics(df_events)
-
