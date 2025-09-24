@@ -2,39 +2,9 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Financial Calendar//EN
 BEGIN:VEVENT
-DTSTART:20250923T134500Z
-SUMMARY:USD - S&P Global Manufacturing PMI  (Sep)
-DESCRIPTION:Forecast: 52.2, Previous: 53.0, Actual: None
-UID:d57b96e2af5a3cd47db4a672822fe83e@fin.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20250923T134500Z
-SUMMARY:USD - S&P Global Services PMI  (Sep)
-DESCRIPTION:Forecast: 54.0, Previous: 54.5, Actual: None
-UID:fc5e0e2b174d739374e052cc22268f45@fin.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20250923T135000Z
-SUMMARY:USD - U.S. President Trump Speaks
-DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:8fd437d251eb43b36c0ab08da20835ba@fin.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20250923T163500Z
-SUMMARY:USD - Fed Chair Powell Speaks
-DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:7ff8ec86ecb3a54fd6dd24c17140fd0f@fin.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20250923T232000Z
-SUMMARY:USD - U.S. President Trump Speaks
-DESCRIPTION:Forecast: None, Previous: None, Actual: None
-UID:89a18cd6caf38d295385a2eb3c8d8e95@fin.org
-END:VEVENT
-BEGIN:VEVENT
 DTSTART:20250924T140000Z
 SUMMARY:USD - New Home Sales  (Aug)
-DESCRIPTION:Forecast: 651K, Previous: 652K, Actual: None
+DESCRIPTION:Forecast: 650K, Previous: 652K, Actual: None
 UID:1c2bcf4337eee6dbc419cec8afe50204@fin.org
 END:VEVENT
 BEGIN:VEVENT
@@ -148,7 +118,7 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTART:20251001T134500Z
 SUMMARY:USD - S&P Global Manufacturing PMI  (Sep)
-DESCRIPTION:Forecast: None, Previous: 53.0, Actual: None
+DESCRIPTION:Forecast: None, Previous: 52.0, Actual: None
 UID:7ee32fcf91c47b3f8a5bf49a3aa398de@fin.org
 END:VEVENT
 BEGIN:VEVENT
@@ -190,7 +160,7 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTART:20251003T134500Z
 SUMMARY:USD - S&P Global Services PMI  (Sep)
-DESCRIPTION:Forecast: None, Previous: 55.4, Actual: None
+DESCRIPTION:Forecast: None, Previous: 53.9, Actual: None
 UID:6a7ec8b43787ded58c4f301774a1c57f@fin.org
 END:VEVENT
 BEGIN:VEVENT
@@ -204,5 +174,11 @@ DTSTART:20251003T140000Z
 SUMMARY:USD - ISM Non-Manufacturing Prices  (Sep)
 DESCRIPTION:Forecast: None, Previous: 69.2, Actual: None
 UID:31b0813a7b99980f5ecf30ac70cb3a95@fin.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251008T010000Z
+SUMMARY:NZD - RBNZ Interest Rate Decision
+DESCRIPTION:Forecast: None, Previous: 3.00%, Actual: None
+UID:352cc3b4ef057acd629371fe36fdb2a3@fin.org
 END:VEVENT
 END:VCALENDAR
