@@ -16,49 +16,49 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250930T060000Z
 SUMMARY:GBP - GDP (YoY)  (Q2)
-DESCRIPTION:Forecast: 1.2%, Previous: 1.2%, Actual: None
+DESCRIPTION:Forecast: 1.2%, Previous: 1.3%, Actual: None
 UID:482e5ea5606b875ce1a9c609f7a12c0b@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250930T060000Z
 SUMMARY:GBP - GDP (QoQ)  (Q2)
-DESCRIPTION:Forecast: 0.3%, Previous: 0.3%, Actual: None
+DESCRIPTION:Forecast: 0.3%, Previous: 0.7%, Actual: None
 UID:06c1bff19026e2b33a0d1a93b8c12857@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250930T120000Z
 SUMMARY:EUR - German CPI (MoM)  (Sep)
-DESCRIPTION:Forecast: None, Previous: 0.1%, Actual: None
+DESCRIPTION:Forecast: 0.1%, Previous: 0.1%, Actual: None
 UID:4bba1ef82d1fd73919d443421b010a52@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250930T134500Z
 SUMMARY:USD - Chicago PMI  (Sep)
-DESCRIPTION:Forecast: None, Previous: 41.5, Actual: None
+DESCRIPTION:Forecast: 43.2, Previous: 41.5, Actual: None
 UID:7a40ecdd82f705c1e0a60aac5972d94a@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250930T140000Z
 SUMMARY:USD - CB Consumer Confidence  (Sep)
-DESCRIPTION:Forecast: 96.0, Previous: 97.4, Actual: None
+DESCRIPTION:Forecast: 95.3, Previous: 97.4, Actual: None
 UID:a3a33e7a258c886a4492850ec03ee353@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20250930T140000Z
 SUMMARY:USD - JOLTS Job Openings  (Aug)
-DESCRIPTION:Forecast: None, Previous: 7.181M, Actual: None
+DESCRIPTION:Forecast: 7.150M, Previous: 7.181M, Actual: None
 UID:dbb142b840451c0dee29a7563f262c41@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20251001T090000Z
 SUMMARY:EUR - CPI (YoY)  (Sep)
-DESCRIPTION:Forecast: 2.3%, Previous: 2.0%, Actual: None
+DESCRIPTION:Forecast: 2.2%, Previous: 2.0%, Actual: None
 UID:d27678c616ed76ed20e5a3e06af56ad3@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20251001T121500Z
 SUMMARY:USD - ADP Nonfarm Employment Change  (Sep)
-DESCRIPTION:Forecast: None, Previous: 54K, Actual: None
+DESCRIPTION:Forecast: 53K, Previous: 54K, Actual: None
 UID:b64eac3200450587c044b908f4971452@fin.org
 END:VEVENT
 BEGIN:VEVENT
@@ -70,13 +70,13 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTART:20251001T140000Z
 SUMMARY:USD - ISM Manufacturing PMI  (Sep)
-DESCRIPTION:Forecast: 49.2, Previous: 48.7, Actual: None
+DESCRIPTION:Forecast: 49.1, Previous: 48.7, Actual: None
 UID:07b05dbf1035e6d1de8b4e917c4e58b3@fin.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20251001T140000Z
 SUMMARY:USD - ISM Manufacturing Prices  (Sep)
-DESCRIPTION:Forecast: None, Previous: 63.7, Actual: None
+DESCRIPTION:Forecast: 64.5, Previous: 63.7, Actual: None
 UID:9cb6f1fbed678aa4742c16321fe123bb@fin.org
 END:VEVENT
 BEGIN:VEVENT
@@ -88,7 +88,7 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTART:20251002T123000Z
 SUMMARY:USD - Initial Jobless Claims
-DESCRIPTION:Forecast: None, Previous: 218K, Actual: None
+DESCRIPTION:Forecast: 229K, Previous: 218K, Actual: None
 UID:53f3e8e3c2a337d90fefec92f2e7b47c@fin.org
 END:VEVENT
 BEGIN:VEVENT
@@ -100,7 +100,7 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTART:20251003T123000Z
 SUMMARY:USD - Nonfarm Payrolls  (Sep)
-DESCRIPTION:Forecast: 39K, Previous: 22K, Actual: None
+DESCRIPTION:Forecast: 51K, Previous: 22K, Actual: None
 UID:8ac4d62fa3262e1899306a3fc9af300f@fin.org
 END:VEVENT
 BEGIN:VEVENT
@@ -112,7 +112,7 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTART:20251003T134500Z
 SUMMARY:USD - S&P Global Services PMI  (Sep)
-DESCRIPTION:Forecast: 53.9, Previous: 54.5, Actual: None
+DESCRIPTION:Forecast: 53.9, Previous: 53.9, Actual: None
 UID:6a7ec8b43787ded58c4f301774a1c57f@fin.org
 END:VEVENT
 BEGIN:VEVENT
